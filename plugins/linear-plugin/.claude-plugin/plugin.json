@@ -1,0 +1,8 @@
+{
+    "name": "linear-plugin",
+    "description": "Linear plugins for claude to work with Linear",
+    "version": "1.0.0",
+    "author": {
+        "name": "Nelson Rosa"
+    }
+}

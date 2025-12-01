@@ -1,0 +1,8 @@
+{
+    "name": "nextjs-plugin",
+    "description": "Next.js plugins for claude to work with Next.js",
+    "version": "1.0.0",
+    "author": {
+        "name": "Nelson Rosa"
+    }
+}

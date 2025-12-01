@@ -1,0 +1,17 @@
+{
+    "name": "horuz",
+    "owner": {
+      "name": "Nelson Rosa",
+      "email": "nelson.rosa@horuz.ai"
+    },
+    "plugins": [
+      {
+        "name": "nextjs-plugin",
+        "source": "./plugins/nextjs-plugin"
+      },
+      {
+        "name": "linear-plugin",
+        "source": "./plugins/linear-plugin"
+      }
+    ]
+  }
