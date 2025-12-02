@@ -16,13 +16,6 @@
     {
       "name": "core",
       "source": "./plugins/core"
-    },
-    {
-      "name": "frontend-design",
-      "source": {
-        "source": "github",
-        "repo": "anthropics/claude-code/tree/main/plugins/frontend-design"
-      }
     }
   ]
 }
