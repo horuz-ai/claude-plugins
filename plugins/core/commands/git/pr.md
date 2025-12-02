@@ -11,11 +11,22 @@ You are helping a developer create a well-documented pull request targeting the 
 
 - Current branch: !`git branch --show-current`
 - Git status: !`git status --short`
-- Commits on this branch (not in dev): !`git log origin/dev..HEAD --oneline 2>/dev/null || echo "NO_COMMITS_AHEAD"`
-- Git diff from dev (summary): !`git diff origin/dev --stat 2>/dev/null | tail -20`
-- All commit messages on this branch: !`git log origin/dev..HEAD --pretty=format:"%s" 2>/dev/null`
-- Check if PR already exists: !`gh pr view --json url 2>/dev/null || echo "NO_PR_EXISTS"`
 - GitHub username (reviewer): !`echo "nelsonrosa3"`
+
+## Your Task
+
+### Step 0: Gather Information
+
+First, gather the necessary information:
+```bash
+git fetch origin
+git log origin/dev..HEAD --oneline
+git log origin/dev..HEAD --pretty=format:"%s"
+git diff origin/dev --stat
+gh pr view --json url
+```
+
+Use this to understand what commits exist and if a PR already exists.
 
 ## PR Best Practices
 
@@ -29,10 +40,6 @@ A good pull request should:
 6. **Mention breaking changes** if any
 7. **Link related issues** if applicable
 
-## Your Task
-
-Follow these steps precisely:
-
 ### Step 1: Validate Current State
 
 **Check if on a protected branch:**
@@ -44,11 +51,12 @@ Follow these steps precisely:
   - Inform developer: "You have uncommitted changes. Please use `/commit` first before creating a PR."
 
 **Check if there are commits to push:**
-- If no commits ahead of dev: **STOP**
+- If no commits ahead of dev (from the git log command): **STOP**
   - Inform developer: "This branch has no new commits compared to dev. Nothing to create a PR for."
 
 **Check if PR already exists:**
-- If PR already exists, inform the developer and provide the PR URL
+- If `gh pr view` returns a URL, a PR already exists
+- Inform the developer and provide the PR URL
 - Ask if they want to update the PR description instead
 
 ### Step 2: Push the Branch

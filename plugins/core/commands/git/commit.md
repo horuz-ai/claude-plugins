@@ -11,12 +11,9 @@ You are helping a developer commit their changes following the organization's gi
 
 - Current branch: !`git branch --show-current`
 - Git status: !`git status`
-- Git diff summary: !`git diff --stat HEAD 2>/dev/null || git diff --stat`
-- Git diff (for understanding changes): !`git diff HEAD 2>/dev/null | head -200`
+- Git diff summary: !`git diff --stat HEAD`
 - Git user name: !`git config user.name`
-- Recent commits on this branch: !`git log --oneline -5 2>/dev/null`
-- Check if branch is merged to dev: !`git branch -r --contains HEAD 2>/dev/null | grep -q "origin/dev" && echo "MERGED_TO_DEV" || echo "NOT_MERGED"`
-- Package manager detection: !`[ -f "bun.lockb" ] && echo "bun" || ([ -f "pnpm-lock.yaml" ] && echo "pnpm" || ([ -f "yarn.lock" ] && echo "yarn" || echo "npm"))`
+- Recent commits on this branch: !`git log --oneline -5`
 
 ## Protected Branches
 
@@ -27,7 +24,29 @@ These branches are protected and direct commits are NOT allowed:
 
 ## Your Task
 
-Analyze the context above and follow the appropriate scenario:
+First, perform these initial checks:
+
+### Initial Checks (run these first)
+
+1. **Detect package manager** by checking which lock file exists:
+   - `bun.lockb` → use `bun`
+   - `pnpm-lock.yaml` → use `pnpm`
+   - `yarn.lock` → use `yarn`
+   - Otherwise → use `npm`
+
+2. **Check if branch is merged to dev** (only if not on a protected branch):
+   ```bash
+   git fetch origin dev
+   git branch -r --contains HEAD | grep "origin/dev"
+   ```
+   If this returns a result, the branch is already merged.
+
+3. **Read the git diff** to understand the changes:
+   ```bash
+   git diff HEAD
+   ```
+
+Now analyze the context above and follow the appropriate scenario:
 
 ---
 
@@ -89,7 +108,7 @@ If the current branch is already a properly named branch (e.g., `feature/user-au
 
 ### SCENARIO D: Branch Already Merged to Dev
 
-If the context shows "MERGED_TO_DEV" and there are new changes:
+If the initial check shows the branch is already merged to dev and there are new changes:
 
 1. **Inform the developer** that this branch has already been merged to dev
 2. **Recommend** they run `/branch` to start fresh from dev with a new branch
@@ -99,12 +118,11 @@ If the context shows "MERGED_TO_DEV" and there are new changes:
 
 ## Validation Steps (Before Committing)
 
-Before creating the commit, run these validation checks:
+Before creating the commit, run these validation checks using the package manager you detected earlier:
 
 ### Step 1: Run Linter
-Based on the detected package manager, run:
 ```bash
-{package-manager} run lint 2>&1 || echo "LINT_CHECK_DONE"
+{detected-package-manager} run lint
 ```
 
 - If lint errors are found: **STOP** and inform the developer
@@ -117,8 +135,9 @@ Based on the detected package manager, run:
 ### Step 2: Run Type Check (if TypeScript project)
 Check if tsconfig.json exists, if so:
 ```bash
-{package-manager} run typecheck 2>&1 || {package-manager} run type-check 2>&1 || npx tsc --noEmit 2>&1 || echo "TYPE_CHECK_DONE"
+{detected-package-manager} run typecheck
 ```
+Or try `type-check` or `npx tsc --noEmit` if typecheck script doesn't exist.
 
 - If type errors are found: **STOP** and inform the developer
   - Show the type errors clearly
@@ -129,7 +148,7 @@ Check if tsconfig.json exists, if so:
 
 ### Step 3: Run Build Check
 ```bash
-{package-manager} run build 2>&1 || echo "BUILD_CHECK_DONE"
+{detected-package-manager} run build
 ```
 
 - If build fails: **STOP** and inform the developer

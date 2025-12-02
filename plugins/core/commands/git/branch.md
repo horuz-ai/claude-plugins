@@ -13,7 +13,6 @@ You are helping a developer start new work by creating a properly named feature 
 - Current branch: !`git branch --show-current`
 - Git status: !`git status --short`
 - Git user name: !`git config user.name`
-- Remote dev branch status: !`git fetch origin dev 2>/dev/null && git log HEAD..origin/dev --oneline 2>/dev/null | head -5`
 
 ## Task Description (from user)
 

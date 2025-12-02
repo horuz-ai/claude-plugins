@@ -12,12 +12,19 @@ You are helping promote changes from the `dev` branch to the `staging` branch.
 
 - Current branch: !`git branch --show-current`
 - Git status: !`git status --short`
-- Commits in dev not in staging: !`git fetch origin && git log origin/staging..origin/dev --oneline 2>/dev/null | head -20`
-- Files that will change: !`git diff origin/staging..origin/dev --stat 2>/dev/null | tail -15`
 
 ## Your Task
 
 Follow these steps precisely:
+
+### Step 0: Fetch and Check Changes
+
+First, fetch the latest from origin and check what will be promoted:
+```bash
+git fetch origin
+git log origin/staging..origin/dev --oneline
+git diff origin/staging..origin/dev --stat
+```
 
 ### Step 1: Validate State
 

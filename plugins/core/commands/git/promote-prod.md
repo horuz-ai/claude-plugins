@@ -14,15 +14,24 @@ You are helping promote changes from the `staging` branch to the `main` (product
 
 - Current branch: !`git branch --show-current`
 - Git status: !`git status --short`
-- Current latest tag: !`git describe --tags --abbrev=0 2>/dev/null || echo "NO_TAGS_YET"`
-- All version tags (latest 10): !`git tag -l "v*" --sort=-version:refname | head -10`
-- Commits in staging not in main: !`git fetch origin && git log origin/main..origin/staging --oneline 2>/dev/null | head -20`
-- Commit types since last release: !`git log origin/main..origin/staging --pretty=format:"%s" 2>/dev/null`
-- Files that will change: !`git diff origin/main..origin/staging --stat 2>/dev/null | tail -15`
+- All version tags (latest 10): !`git tag -l "v*" --sort=-version:refname`
 
 ## Your Task
 
 Follow these steps precisely:
+
+### Step 0: Fetch and Check Changes
+
+First, fetch the latest and gather information:
+```bash
+git fetch origin
+git describe --tags --abbrev=0
+git log origin/main..origin/staging --oneline
+git log origin/main..origin/staging --pretty=format:"%s"
+git diff origin/main..origin/staging --stat
+```
+
+Use this information to understand what will be released and determine the version bump.
 
 ### Step 1: Validate State
 
