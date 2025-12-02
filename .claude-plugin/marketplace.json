@@ -1,17 +1,28 @@
 {
-    "name": "horuz",
-    "owner": {
-      "name": "Nelson Rosa",
-      "email": "nelson.rosa@horuz.ai"
+  "name": "horuz",
+  "owner": {
+    "name": "Nelson Rosa",
+    "email": "nelson.rosa@horuz.ai"
+  },
+  "plugins": [
+    {
+      "name": "nextjs",
+      "source": "./plugins/nextjs"
     },
-    "plugins": [
-      {
-        "name": "nextjs-plugin",
-        "source": "./plugins/nextjs-plugin"
-      },
-      {
-        "name": "linear-plugin",
-        "source": "./plugins/linear-plugin"
+    {
+      "name": "linear",
+      "source": "./plugins/linear"
+    },
+    {
+      "name": "core",
+      "source": "./plugins/core"
+    },
+    {
+      "name": "frontend-design",
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-code/tree/main/plugins/frontend-design"
       }
-    ]
-  }
+    }
+  ]
+}

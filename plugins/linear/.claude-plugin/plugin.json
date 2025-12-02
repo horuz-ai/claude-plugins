@@ -1,5 +1,5 @@
 {
-    "name": "linear-plugin",
+    "name": "linear",
     "description": "Linear plugins for claude to work with Linear",
     "version": "1.0.0",
     "author": {
