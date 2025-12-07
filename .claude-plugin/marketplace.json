@@ -16,6 +16,10 @@
     {
       "name": "core",
       "source": "./plugins/core"
+    },
+    {
+      "name": "nano-banana",
+      "source": "./plugins/nano-banana"
     }
   ]
 }

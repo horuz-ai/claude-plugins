@@ -1,0 +1,8 @@
+{
+    "name": "nano-banana",
+    "description": "Nano Banana plugins for claude to work with Nano Banana",
+    "version": "1.0.0",
+    "author": {
+        "name": "Nelson Rosa"
+    }
+}
