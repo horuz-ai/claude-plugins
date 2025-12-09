@@ -1,0 +1,8 @@
+{
+    "name": "google",
+    "description": "Google plugins for claude to work with Google services and libraries",
+    "version": "1.0.0",
+    "author": {
+        "name": "Nelson Rosa"
+    }
+}

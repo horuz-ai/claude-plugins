@@ -18,8 +18,8 @@
       "source": "./plugins/core"
     },
     {
-      "name": "nano-banana",
-      "source": "./plugins/nano-banana"
+      "name": "google",
+      "source": "./plugins/google"
     }
   ]
 }

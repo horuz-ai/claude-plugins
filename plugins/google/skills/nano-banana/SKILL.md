@@ -1,5 +1,5 @@
 ---
-name: nano-banana-imagegen
+name: nano-banana
 description: AI image generation and editing using Google's Nano Banana (Gemini 2.5 Flash Image) and Nano Banana Pro (Gemini 3 Pro Image) APIs. Use this skill when the user wants to generate, edit, or compose images using AI. Triggers include requests to create images from text descriptions, edit existing images, add/remove elements from photos, apply style transfers, maintain character consistency across images, generate images with text overlays (logos, posters, infographics), or create multi-image compositions. Also use when users mention "Nano Banana", "Gemini image", or want AI-generated visuals.
 ---
 
