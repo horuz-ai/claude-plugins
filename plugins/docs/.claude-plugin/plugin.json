@@ -1,0 +1,8 @@
+{
+    "name": "docs",
+    "description": "Docs plugins for claude to work with docs",
+    "version": "1.0.0",
+    "author": {
+        "name": "Nelson Rosa"
+    }
+}
