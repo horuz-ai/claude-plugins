@@ -1,7 +1,7 @@
 {
     "name": "core",
     "description": "Core plugins that are must have for any project",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "author": {
         "name": "Nelson Rosa"
     }
