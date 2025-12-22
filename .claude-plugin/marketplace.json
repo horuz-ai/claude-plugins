@@ -24,6 +24,10 @@
     {
       "name": "docs",
       "source": "./plugins/docs"
+    },
+    {
+      "name": "website-cloner",
+      "source": "./plugins/website-cloner"
     }
   ]
 }

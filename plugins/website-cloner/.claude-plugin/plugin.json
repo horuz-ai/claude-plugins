@@ -1,0 +1,8 @@
+{
+    "name": "website-cloner",
+    "description": "Clone a website from a URL",
+    "version": "1.0.0",
+    "author": {
+        "name": "Nelson Rosa"
+    }
+}
