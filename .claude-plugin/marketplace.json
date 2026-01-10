@@ -28,6 +28,10 @@
     {
       "name": "website-cloner",
       "source": "./plugins/website-cloner"
+    },
+    {
+      "name": "laravel",
+      "source": "./plugins/laravel"
     }
   ]
 }

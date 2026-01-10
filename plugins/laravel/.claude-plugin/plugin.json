@@ -1,0 +1,8 @@
+{
+    "name": "laravel",
+    "description": "Laravel framework plugin for PHP development",
+    "version": "1.0.0",
+    "author": {
+        "name": "Nelson Rosa"
+    }
+}
