@@ -32,6 +32,10 @@
     {
       "name": "laravel",
       "source": "./plugins/laravel"
+    },
+    {
+      "name": "agent-browser",
+      "source": "./plugins/agent-browser"
     }
   ]
 }

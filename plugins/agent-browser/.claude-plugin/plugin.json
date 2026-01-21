@@ -1,0 +1,8 @@
+{
+    "name": "agent-browser",
+    "description": "Agent browser plugins for claude to work with browser",
+    "version": "1.0.0",
+    "author": {
+        "name": "Nelson Rosa"
+    }
+}
